@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub')
+        IMAGE_NAME = "liorberi/bleumi"
+        VERSION = "latest"
+    }
+
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    def dockerImage = docker.build("${IMAGE_NAME}:${VERSION}", "-f Dockerfile .")
+                }
+            }
+        }
+
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+                        dockerImage.push("${VERSION}")
+                    }
+                }
+            }
+        }
+    }
+}

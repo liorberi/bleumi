@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: bleumi-pod
-    image: liorberi/bleumi:1
+    image: liorberi/bleumi
   
   restartPolicy: OnFailure
 
