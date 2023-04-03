@@ -14,7 +14,7 @@ This project is a CICD process of building an app and expose it to the world in 
 
 install machines enviroment .
 create script app.
-create the CI/CD process
+create the CI/CD process that gather it together and create the app.
 ### Usage
 
 run the pipeline job and check if the app created and being exposed.
