@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bleumi-pod
+spec:
+  containers:
+  - name: bleumi-pod
+    image: liorberi/bleumi:1
+    #command: ["/var/lib/jenkins/time.bash"]
+  restartPolicy: OnFailure
