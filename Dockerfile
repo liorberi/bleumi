@@ -1,9 +1,5 @@
-From alpine
-
-WORKDIR /var/lib/jenkins/docker_files
-
-COPY time.sh /time.sh
-
-EXPOSE 443
-
-ENTRYPOINT ["sh","/time.sh"]
+FROM python:3
+ADD index.html index.html
+ADD server.py server.py
+EXPOSE 8000
+ENTRYPOINT [“python3”, “server.py”]https://github.com/liorberi/bleumi/blob/main/Dockerfile
