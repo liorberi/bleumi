@@ -6,5 +6,5 @@ spec:
   containers:
   - name: bleumi-pod
     image: liorberi/bleumi:1
-    #command: ["/var/lib/jenkins/time.bash"]
+  
   restartPolicy: OnFailure
