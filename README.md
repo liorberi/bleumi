@@ -17,7 +17,7 @@ create script app.
 create the CI/CD process that gather it together and create the app.
 ### Usage
 
-run the pipeline job and check if the app created and being exposed.
+run the pipeline job and check if the app created and being exposed with 443 port.
  
 
 ## Acknowledgments
