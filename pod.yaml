@@ -16,10 +16,11 @@ kind: Service
 metadata:
   name: bleumi-service
 spec:
+  type: NodePort 
   selector:
     app.kubernetes.io/name: bleumi-pod
   ports:
     - protocol: TCP
-      port: 443
-      targetPort: 80
-    type: NodePort  
+      port: 80
+      targetPort: 80 
+      nodePort: 30007
