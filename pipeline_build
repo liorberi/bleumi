@@ -8,19 +8,11 @@ pipeline {
     }
 
     stages {
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    def dockerImage = docker.build("${IMAGE_NAME}:${VERSION}", "-f Dockerfile .")
-                }
-            }
-        }
-
-        stage('Push Docker Image to Docker Hub') {
+        stage('Build Docker Image and Push Docker Image to Docker Hub') {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-                        dockerImage.push("${VERSION}")
+                        docker.build("${IMAGE_NAME}:${VERSION}", "-f Dockerfile .").push("${VERSION}")
                     }
                 }
             }
