@@ -17,7 +17,7 @@ metadata:
   name: my-service
 spec:
   selector:
-    app.kubernetes.io/name: MyApp
+    app.kubernetes.io/name: bleumi-pod
   ports:
     - protocol: TCP
       port: 443
