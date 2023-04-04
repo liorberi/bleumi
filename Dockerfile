@@ -1,5 +1,6 @@
 FROM python:3
-ADD index.html index.html
-ADD server.py server.py
+WORKDIR /usr/src/app
+COPY index.html ./index.html
+COPY server.py ./server.py
 EXPOSE 80
-ENTRYPOINT [“python”, “server.py”]
+ENTRYPOINT [“python”, “./server.py”]
