@@ -1,5 +1,5 @@
 node {
   stage("job deployment"){
-       sh 'kubectl apply -f /var/lib/jenkins/pod.yaml'
+       sh 'kubectl apply -f /var/lib/jenkins/workspace/pipeline_deploy/pod.yaml'
 }
 }
