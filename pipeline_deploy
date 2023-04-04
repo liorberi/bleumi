@@ -2,9 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage("job deployment"){
-          sh 'kubectl apply -f /var/lib/jenkins/workspace/pipeline_deploy/pod.yaml'
-      }
-   }
-}
-
+        stage('Build Docker Image and Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                    sh 'kubectl apply -f /var/lib/jenkins/workspace/pipeline_deploy/pod.yaml'
+                    }
+                }
+            }
+        }
+    }
