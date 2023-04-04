@@ -14,7 +14,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: bleumi-service
 spec:
   selector:
     app.kubernetes.io/name: bleumi-pod
